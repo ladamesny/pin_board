@@ -5,12 +5,13 @@ class PinsController < ApplicationController
   def index
     @pins = Pin.all.order("created_at DESC")
   end
-  def show
 
-  end
+  def show;end
+
   def new
     @pin = current_user.pins.build
   end
+
   def create
     @pin = current_user.pins.build(pin_params)
 
@@ -21,9 +22,7 @@ class PinsController < ApplicationController
     end
   end
 
-  def edit
-
-  end
+  def edit;end
 
   def update
     if @pin.update(pin_params)

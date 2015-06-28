@@ -1,0 +1,13 @@
+- pin.comments.each do |comment|
+  %hr/
+  .row
+    .col-md-2
+      .btn-group
+        = link_to like_pin_comment_path(comment.pin, comment), method: :put, class: "btn btn-default" do
+          %span.glyphicon.glyphicon-heart
+            = comment.get_upvotes.size
+    .col-md-6
+      = comment.description
+    .col-md-4
+      by:
+      = comment.user.email
